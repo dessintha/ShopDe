@@ -15,7 +15,7 @@
 				?>
 			</div><br><br>
 			<h4>Input Alamat Pengiriman dan Pembayaran</h4><br>
-			<form method="post" action="<?php echo base_url('Dashboard/proses_pesanan') ?> "><br>
+			<form method="post" action="<?php echo esc_url('Dashboard/proses_pesanan') ?> "><br>
 				<div class="form-group">
 					<label>Nama Lengkap</label>
 					<input type="text" name="nama" placeholder="Nama Lengkap Anda" class="form-control">
