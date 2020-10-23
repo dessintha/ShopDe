@@ -14,7 +14,7 @@
             <i class="fas fa-fw fa-tv"></i>
           </div>
           <div class="mr-5"> Elektronik</div><br>
-          <p><?php echo $elektronik ?></p>
+          <p><?php echo esc_html($elektronik); ?></p>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
             <i class="fas fa-fw fa-tshirt"></i>
           </div>
           <div class="mr-5">Pakaian Pria</div><br>
-          <p><?php echo $pakaian_pria ?></p>
+          <p><?php echo esc_html($pakaian_pria); ?></p>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
             <i class="fas fa-fw fa-tshirt"></i>
           </div>
           <div class="mr-5">Pakaian Wanita</div><br>
-          <p><?php echo $pakaian_wanita ?></p>
+          <p><?php echo esc_html($pakaian_wanita); ?></p>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
             <i class="fas fa-fw fa-tshirt"></i>
           </div>
           <div class="mr-5">Pakaian Anak</div><br>
-          <p><?php echo $pakaian_anak ?></p>
+          <p><?php echo esc_html($pakaian_anak); ?></p>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
             <i class="fas fa-fw fa-futbol"></i>
           </div>
           <div class="mr-5">Olahraga</div><br>
-          <p><?php echo $olahraga ?></p>
+          <p><?php echo esc_html($olahraga); ?></p>
         </div>
       </div>
     </div>
