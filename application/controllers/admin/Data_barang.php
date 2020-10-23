@@ -19,7 +19,6 @@ class Data_barang extends CI_Controller
 		$kategori	= $this->input->post('kategori');
 		$harga		= $this->input->post('harga');
 		$stok		= $this->input->post('stok');
-		$gambar		= $_FILES['gambar']['name'];
 		if(isset($_POST['submit'])){
 			$gambar		= $_FILES['gambar']['name'];
 			if ($gambar = ''){}else{
