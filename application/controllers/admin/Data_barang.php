@@ -19,7 +19,7 @@ class Data_barang extends CI_Controller
 		$kategori	= $this->input->post('kategori');
 		$harga		= $this->input->post('harga');
 		$stok		= $this->input->post('stok');
-		$gambar		= $_POST['gambar']['name'];
+		$gambar		= $_FILES['gambar']['name'];
 		if ($gambar = ''){}else{
 			$config['upload_path'] = 'upload';
 			$config ['allowed_types'] = 'jpg|png|jpeg';
