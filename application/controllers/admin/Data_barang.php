@@ -19,16 +19,19 @@ class Data_barang extends CI_Controller
 		$kategori	= $this->input->post('kategori');
 		$harga		= $this->input->post('harga');
 		$stok		= $this->input->post('stok');
-		$gambar		= $HTTP_POST_FILES['gambar']['name'];
-		if ($gambar = ''){}else{
-			$config['upload_path'] = 'upload';
-			$config ['allowed_types'] = 'jpg|png|jpeg';
+		$gambar		= $_FILES['gambar']['name'];
+		if(isset($_POST['submit'])){
+			$gambar		= $_FILES['gambar']['name'];
+			if ($gambar = ''){}else{
+				$config['upload_path'] = 'upload';
+				$config ['allowed_types'] = 'jpg|png|jpeg';
 
-			$this->load->library('upload', $config);
-			if(!$this->upload->do_upload('gambar')){
-				echo "Gambar Gagal Diupload";
-			}else{
-				$gambar = $this->upload->data('file_name');
+				$this->load->library('upload', $config);
+				if(!$this->upload->do_upload('gambar')){
+					echo "Gambar Gagal Diupload";
+				}else{
+					$gambar = $this->upload->data('file_name');
+				}
 			}
 		}
 
