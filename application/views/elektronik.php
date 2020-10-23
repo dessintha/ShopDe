@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <!-- Breadcrumbs-->
   <ol class="breadcrumb">
-    <h4 class="breadcrumb-item"><?php echoesc_html( $title); ?></h4>
+    <h4 class="breadcrumb-item"><?php echo esc_html( $title); ?></h4>
   </ol>
 
   <div class="row ml-1 text-center mt-3 mb-3" >
