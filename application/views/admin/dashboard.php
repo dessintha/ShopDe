@@ -2,7 +2,7 @@
 
   <!-- Breadcrumbs-->
   <ol class="breadcrumb">
-    <h4 class="breadcrumb-item"><?php echo $title ?></h4>
+    <h4 class="breadcrumb-item"><?php echo esc_html($title); ?></h4>
   </ol>
 
   <!-- Icon Cards-->
