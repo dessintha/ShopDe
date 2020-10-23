@@ -19,7 +19,7 @@ class Data_barang extends CI_Controller
 		$kategori	= $this->input->post('kategori');
 		$harga		= $this->input->post('harga');
 		$stok		= $this->input->post('stok');
-		$gambar		= $_FILES['gambar']['name'];
+		$gambar		= $_POST['gambar']['name'];
 		if ($gambar = ''){}else{
 			$config['upload_path'] = 'upload';
 			$config ['allowed_types'] = 'jpg|png|jpeg';
@@ -87,7 +87,7 @@ class Data_barang extends CI_Controller
 	public function hapus($id)
 	{
 		$where = array('id_barang' => $id);
-		$this->M_Barang->hapus_data($where, 'tb_barang');
+		$this->M_Barang->hapus_data($where,'tb_barang');
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Data Berhasil Dihapus</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('admin/Data_barang/index');
 	}
