@@ -2,7 +2,7 @@
 
   <!-- Breadcrumbs-->
   <ol class="breadcrumb">
-    <h4 class="breadcrumb-item"><?php echo $title ?></h4>
+    <h4 class="breadcrumb-item"><?php echo esc_html($title); ?></h4>
   </ol>
 
   <!-- DataTables Example -->
@@ -12,7 +12,7 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
-        <a class="btn btn-sm btn-primary mb-4" href="<?php echo base_url('admin/Data_barang') ?>" data-toggle="modal" data-target="#tambah_barang"><i class="fas fa-plus"></i>Tambah Barang</a>
+        <a class="btn btn-sm btn-primary mb-4" href="<?php echo esc_url('admin/Data_barang') ?>" data-toggle="modal" data-target="#tambah_barang"><i class="fas fa-plus"></i>Tambah Barang</a>
         <?php echo $this->session->flashdata('pesan') ?>
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -29,12 +29,13 @@
           <tbody>
             <?php $no=1; foreach($barang as $brg) : ?>
               <tr>
-              <td><?php echo $no++ ?></td>
-              <td><?php echo $brg->nama_brg ?></td>
-              <td><?php echo $brg->keterangan ?></td>
-              <td><?php echo $brg->kategori ?></td>
+              <td><?php echo esc_html($no++); ?></td>
+              <td><?php echo esc_html($brg->nama_brg); ?></td>
+              <td><?php echo esc_html($brg->keterangan); ?></td>
+              <td><?php echo esc_html($brg->kategori); ?></td>
               <td>Rp. <?php echo number_format($brg->harga,0,',','.')?></td>
-              <td><?php echo $brg->stok ?></td>              <td><?php echo anchor('admin/Data_barang/edit/'.$brg->id_barang, '<div class="btn btn-primary btn-sm" title="Edit Barang"><i class="fas fa-edit"></i></div>') ?></td>
+              <td><?php echo esc_html($brg->stok); ?></td>              
+              <td><?php echo anchor('admin/Data_barang/edit/'.$brg->id_barang, '<div class="btn btn-primary btn-sm" title="Edit Barang"><i class="fas fa-edit"></i></div>') ?></td>
               <td><?php echo anchor('admin/Data_barang/hapus/'.$brg->id_barang, '<div class="btn btn-danger btn-sm" title="Hapus Barang"><i class="fas fa-trash"></i></div>') ?></td>
             </tr>
             <?php endforeach; ?>
@@ -55,7 +56,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="<?php echo base_url().'admin/data_barang/tambah_aksi' ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo esc_url().'admin/data_barang/tambah_aksi' ?>" method="post" enctype="multipart/form-data">
         	<div class="form-group">
         		<label>Nama Barang</label>
         		<input type="text" name="nama_brg" class="form-control">
